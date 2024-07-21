@@ -1,2 +1,11 @@
-use this link to get the installation steps
+use this link to get the installation steps kafka 3.1.0
 https://www.conduktor.io/kafka/how-to-install-apache-kafka-on-linux-without-zookeeper-kraft-mode/
+
+to start Kraft
+ --  kafka-storage.sh random-uuid
+ --  kafka-storage.sh format -t <uuid> -c ~/kafka_2.13-3.1.0/config/kraft/server.properties
+ --  kafka-server-start.sh ~/kafka_2.13-3.1.0/config/kraft/server.properties
+
+with zookeeper
+ --  zookeeper-server-start.sh ~/kafka_2.13-3.1.0/config/zookeeper.properties
+ --  kafka-server-start.sh ~/kafka_2.13-3.1.0/config/server.properties
