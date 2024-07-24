@@ -10,7 +10,13 @@ def delivery_report(err, msg):
 
 
 conf = {'bootstrap.servers': 'localhost:9092',
-        'client.id': socket.gethostname()}
+        'client.id': socket.gethostname(),
+        'acks':-1,
+        'enable.idempotence': True,
+        #'min.insync.replicas': 2,
+        'retries': 2147483647,
+        'delivery.timeout.ms': 120000,
+        'max.in.flight.requests.per.connection': 5}
 
 producer = Producer(conf)
 
